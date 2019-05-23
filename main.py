@@ -68,9 +68,12 @@ def mr(text_field, label_field, **kargs):
 
 # load data
 print("\nLoading data...")
+# torchtext 中的 filed() 函数包含一些文本处理的通用参数的设置，同时还包含一个词典对象，可以把文本数据表示成数字数据，进而可以把文本表示成张量。
+# lower 表示是否把数据转化成小写，sequential 表示是否把数据表示成序列，如果为 False，不能使用分词。
 text_field = data.Field(lower=True)
 label_field = data.Field(sequential=False)
 train_iter, dev_iter = mr(text_field, label_field, device=1, repeat=False)
+print(train_iter)
 # train_iter, dev_iter, test_iter = sst(text_field, label_field, device=-1, repeat=False)
 
 
