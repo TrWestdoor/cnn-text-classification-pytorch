@@ -72,8 +72,7 @@ print("\nLoading data...")
 # lower 表示是否把数据转化成小写，sequential 表示是否把数据表示成序列，如果为 False，不能使用分词。
 text_field = data.Field(lower=True)
 label_field = data.Field(sequential=False)
-train_iter, dev_iter = mr(text_field, label_field, device=1, repeat=False)
-print(train_iter)
+train_iter, dev_iter = mr(text_field, label_field, device=0, repeat=False)
 # train_iter, dev_iter, test_iter = sst(text_field, label_field, device=-1, repeat=False)
 
 
